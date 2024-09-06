@@ -5,12 +5,6 @@ add_subdirectory(crypto)
 add_subdirectory(milenage)
 add_subdirectory(uicc)
 
-add_library(storage STATIC storage.c
-                           $<$<NOT:$<BOOL:${CONFIG_NO_DEFAULT_IMPL}>>:fs.c>)
+add_library(storage STATIC storage.c fs.c)
+target_compile_options(storage PRIVATE ${PRJ_COMPILE_OPTIONS_LIST})
 target_include_directories(storage PUBLIC ${CMAKE_SOURCE_DIR}/include)
-
-if(NOT CONFIG_BUILD_LIB_ONLY)
-  add_executable(softsim main.c)
-  target_link_libraries(softsim uicc milenage crypto storage $<$<TARGET_EXISTS:utils>:utils>)
-endif()
-

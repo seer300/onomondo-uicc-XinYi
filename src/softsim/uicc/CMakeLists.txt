@@ -38,15 +38,9 @@ set(uicc_collection
 	uicc_suspend.c
 )
 
-# Add log.c to get fcp_test working with CTest. It has otherwise been removed from the
-# uicc_collection to allow users to implement log.c themselves by default.
-if(BUILD_TESTING)
-	set(uicc_collection ${uicc_collection} log.c)
-	add_compile_definitions(CONFIG_USE_LOGS)
-endif()
-
 # Combine UICC with or without testing required files
 add_library(uicc STATIC ${uicc_collection})
+target_compile_options(uicc PRIVATE ${PRJ_COMPILE_OPTIONS_LIST})
 
 target_include_directories(uicc
 	PUBLIC

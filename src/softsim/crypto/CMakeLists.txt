@@ -10,6 +10,7 @@ add_library(crypto
 		aes-wrap.c
 		des-internal.c
 )
+target_compile_options(crypto PRIVATE ${PRJ_COMPILE_OPTIONS_LIST})
 
 target_include_directories(crypto
 	PUBLIC

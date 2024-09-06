@@ -6,6 +6,7 @@ add_library(milenage
 		milenage.c 
 		milenage_usim.c
 )
+target_compile_options(milenage PRIVATE ${PRJ_COMPILE_OPTIONS_LIST})
 
 target_include_directories(milenage
 	PUBLIC
