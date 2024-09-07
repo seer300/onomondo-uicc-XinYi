@@ -21,6 +21,10 @@
 #ifndef CRYPTO_H
 #define CRYPTO_H
 
+#include "common.h"
+
+typedef unsigned int size_t;
+
 /**
  * md4_vector - MD4 hash for data vector
  * @num_elem: Number of elements in the data vector
