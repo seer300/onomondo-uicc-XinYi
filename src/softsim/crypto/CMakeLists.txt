@@ -19,3 +19,8 @@ target_include_directories(crypto
 		${CMAKE_CURRENT_SOURCE_DIR}
 		${CMAKE_CURRENT_SOURCE_DIR}/../../../include
 )
+
+# 创建输出目录
+file(MAKE_DIRECTORY ${LIB_DIR})
+set_property(TARGET crypto APPEND PROPERTY 
+ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR})

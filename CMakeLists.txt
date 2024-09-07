@@ -1,4 +1,5 @@
 add_subdirectory(src)
+add_subdirectory(utils)
 
 set(CORE cortex-m3)
 list(APPEND PRJ_COMPILE_OPTIONS_LIST

@@ -5,13 +5,16 @@ set(utils_collection
 	ss_profile.c
 )
 
-if(CONFIG_EXTERNAL_KEY_LOAD AND NOT CONFIG_NO_DEFAULT_IMPL)
-  set(utils_collection ${utils_collection} ss_crypto_extension.c)
-endif()
-
 add_library(utils STATIC ${utils_collection})
+target_compile_options(utils PRIVATE ${PRJ_COMPILE_OPTIONS_LIST})
 
 target_include_directories(utils
 	PUBLIC
 		${CMAKE_SOURCE_DIR}/include
 )
+target_include_directories(utils PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+# 创建输出目录
+file(MAKE_DIRECTORY ${LIB_DIR})
+set_property(TARGET utils APPEND PROPERTY 
+ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR})
