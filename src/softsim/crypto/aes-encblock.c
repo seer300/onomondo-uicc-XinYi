@@ -7,7 +7,7 @@
  * See README for more details.
  */
 
-#include <onomondo/softsim/crypto.h>
+#include "crypto.h"
 #include "includes.h"
 #include "common.h"
 #include "aes.h"

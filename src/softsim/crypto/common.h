@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include <onomondo/softsim/mem.h>
+#include "onomondo/softsim/mem.h"
 #define MSG_DEBUG
 #define wpa_hexdump(x, args...)
 #define wpa_hexdump_key(x, args...)

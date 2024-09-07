@@ -46,5 +46,7 @@ target_include_directories(uicc
 	PUBLIC
 		${CMAKE_SOURCE_DIR}/include
 	PRIVATE
-		${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../
+		${CMAKE_CURRENT_SOURCE_DIR}
+		${CMAKE_CURRENT_SOURCE_DIR}/../
+		${CMAKE_CURRENT_SOURCE_DIR}/../../../include
 )
